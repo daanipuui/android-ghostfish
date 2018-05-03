@@ -80,13 +80,13 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-#4 Developed By
+# 4 Developed By
 
-Daniel Puiu
+Daniel PUIU
 
-#5 License
+# 5 License
 
-Copyright 2018 Daniel Puiu
+Copyright 2018 Daniel PUIU
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
