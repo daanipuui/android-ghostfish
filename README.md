@@ -80,11 +80,11 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-# 4 Developed By
+## 4 Developed By
 
 Daniel PUIU
 
-# 5 License
+## 5 License
 
 Copyright 2018 Daniel PUIU
 
