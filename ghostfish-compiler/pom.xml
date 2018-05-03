@@ -18,14 +18,14 @@
     </properties>
 
     <dependencies>
-	
-		<!-- compile dependencies -->
-	
+
+        <!-- compile dependencies -->
+
         <dependency>
             <groupId>com.danielpuiu</groupId>
             <artifactId>ghostfish</artifactId>
         </dependency>
-		
+
         <dependency>
             <groupId>com.google.auto.service</groupId>
             <artifactId>auto-service</artifactId>
@@ -39,9 +39,9 @@
             <scope>system</scope>
             <systemPath>${java.home}/../lib/tools.jar</systemPath>
         </dependency>
-		
-		<!-- test dependencies -->
-		
+
+        <!-- test dependencies -->
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
