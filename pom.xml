@@ -54,6 +54,12 @@
         </pluginManagement>
     </build>
 
+    <scm>
+        <connection>scm:git:https://github.com/daanipuui/android-ghostfish.git</connection>
+        <url>https://github.com/daanipuui/android-ghostfish.git</url>
+        <developerConnection>scm:git:https://github.com/daanipuui/android-ghostfish.git</developerConnection>
+    </scm>
+
     <distributionManagement>
         <repository>
             <id>bintray-daanipuui-android</id>
