@@ -37,4 +37,12 @@
         </dependencies>
     </dependencyManagement>
 
+    <distributionManagement>
+        <repository>
+            <id>bintray-daanipuui-android-ghostfish</id>
+            <name>daanipuui-android-ghostfish</name>
+            <url>https://api.bintray.com/maven/daanipuui/android-ghostfish/</url>
+        </repository>
+    </distributionManagement>
+
 </project>
