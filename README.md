@@ -1,4 +1,4 @@
-# android-ghostfish
+# android-ghostfish [ ![Download](https://api.bintray.com/packages/daanipuui/android/android-ghostfish/images/download.svg) ](https://bintray.com/daanipuui/android/android-ghostfish/_latestVersion)
 Dependency injection container for Android
 
 ## 1. Annotations
