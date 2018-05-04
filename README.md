@@ -35,6 +35,15 @@ public void onCreate() {
 }
 ```
 
+Don't forget to add this class to your manifest file right under `application` tag
+
+```
+<application
+    ...
+    android:name="<class_name>"
+    ...
+```
+
 ### 3.3 Proguard
 
 If you use Proguard and minified, then make sure to add the following rule to your proguard rules file:
