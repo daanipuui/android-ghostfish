@@ -12,6 +12,8 @@
 
     <name>GhostFish Annotation Processor</name>
 
+    <packaging>jar</packaging>
+
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
