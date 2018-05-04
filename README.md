@@ -18,8 +18,8 @@ During this stage, it also adds code allowing dependency injection to every non-
 ### 3.1 Add GhostFish dependency to your gradle file:
 
 ```
-implementation "com.danielpuiu:ghostfish:1.0.0"
-annotationProcessor "com.danielpuiu:ghostfish-compiler:1.0.0"
+implementation "com.danielpuiu:ghostfish:1.1.0"
+annotationProcessor "com.danielpuiu:ghostfish-compiler:1.1.0"
 ```
 
 ### 3.2 Add GhostFish bind call to your application
