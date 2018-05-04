@@ -24,6 +24,7 @@ import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
+import javax.lang.model.element.ElementKind;
 import javax.lang.model.element.TypeElement;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -107,6 +108,10 @@ public class GhostFishProcessor extends AbstractProcessor {
         Set<Element> processedElements = new HashSet<>();
 
         for (Element element : roundEnv.getElementsAnnotatedWith(Inject.class)) {
+            if (element.getKind() != ElementKind.FIELD) {
+                continue;
+            }
+
             Element parent = element.getEnclosingElement();
             if (parent.getAnnotation(ApplicationScoped.class) == null && !processedElements.contains(parent)) {
                 bindGhostFishToClass(parent);
