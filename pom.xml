@@ -69,4 +69,12 @@
         </pluginManagement>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>bintray-daanipuui-android</id>
+            <name>daanipuui-android</name>
+            <url>https://api.bintray.com/maven/daanipuui/android/android-ghostfish/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
 </project>
