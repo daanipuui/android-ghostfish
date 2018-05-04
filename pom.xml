@@ -50,11 +50,6 @@
                 <artifactId>ghostfish</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.danielpuiu</groupId>
-                <artifactId>ghostfish-compiler</artifactId>
-                <version>${project.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
