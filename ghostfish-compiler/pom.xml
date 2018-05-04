@@ -12,6 +12,21 @@
 
     <name>GhostFish Annotation Processor</name>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>danielpuiu</id>
+            <name>Daniel Puiu</name>
+        </developer>
+    </developers>
+
     <properties>
         <autoservice.version>1.0-rc2</autoservice.version>
         <junit.version>4.12</junit.version>

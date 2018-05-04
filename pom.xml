@@ -9,6 +9,23 @@
     <packaging>pom</packaging>
 
     <name>GhostFish Parent</name>
+    <description>Dependency injection for Android</description>
+    <url>https://github.com/daanipuui/android-ghostfish</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>danielpuiu</id>
+            <name>Daniel Puiu</name>
+        </developer>
+    </developers>
     
     <modules>
         <module>ghostfish</module>

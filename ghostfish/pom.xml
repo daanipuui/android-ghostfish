@@ -12,6 +12,21 @@
 
     <name>GhostFish</name>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>danielpuiu</id>
+            <name>Daniel Puiu</name>
+        </developer>
+    </developers>
+
     <properties>
         <android.platform.version>27</android.platform.version>
         <android.support.version>27.1.1</android.support.version>
