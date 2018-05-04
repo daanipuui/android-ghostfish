@@ -37,6 +37,12 @@
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
+    <scm>
+        <connection>scm:git:https://github.com/daanipuui/android-ghostfish.git</connection>
+        <url>https://github.com/daanipuui/android-ghostfish.git</url>
+        <developerConnection>scm:git:https://github.com/daanipuui/android-ghostfish.git</developerConnection>
+    </scm>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -68,19 +74,5 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <scm>
-        <connection>scm:git:https://github.com/daanipuui/android-ghostfish.git</connection>
-        <url>https://github.com/daanipuui/android-ghostfish.git</url>
-        <developerConnection>scm:git:https://github.com/daanipuui/android-ghostfish.git</developerConnection>
-    </scm>
-
-    <distributionManagement>
-        <repository>
-            <id>bintray-daanipuui-android</id>
-            <name>daanipuui-android</name>
-            <url>https://api.bintray.com/maven/daanipuui/android/android-ghostfish/;publish=1</url>
-        </repository>
-    </distributionManagement>
 
 </project>

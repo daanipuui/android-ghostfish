@@ -1,0 +1,16 @@
+.classpath
+.project
+.settings
+.metadata
+*/[0-9]*.zip
+**.iml
+**/.idea/
+**/target/
+**.log
+**.log*
+**.class
+deploy
+*.ipr
+*.iws
+*.cache
+*.png.cache
