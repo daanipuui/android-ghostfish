@@ -1,4 +1,4 @@
-# android-ghostfish [ ![Download](https://api.bintray.com/packages/daanipuui/android/android-ghostfish/images/download.svg) ](https://bintray.com/daanipuui/android/android-ghostfish/_latestVersion)
+# android-ghostfish [ ![Download](https://api.bintray.com/packages/daanipuui/android/android-ghostfish/images/download.svg) ](https://bintray.com/daanipuui/android/android-ghostfish/_latestVersion) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-GhostFish-green.svg?style=flat )]( https://android-arsenal.com/details/1/6940 )
 Dependency injection container for Android
 
 ## 1. Annotations
