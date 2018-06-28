@@ -30,17 +30,15 @@
     </developers>
 
     <properties>
-        <android.platform.version>27</android.platform.version>
-        <android.support.version>27.1.1</android.support.version>
+        <android.version>4.1.1.4</android.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.google.android</groupId>
             <artifactId>android</artifactId>
-            <version>${android.platform.version}</version>
-            <scope>system</scope>
-            <systemPath>${env.ANDROID_HOME}/sdk/platforms/android-${android.platform.version}/android.jar</systemPath>
+            <version>${android.version}</version>
+            <scope>provided</scope>
             <exclusions>
                 <exclusion>
                     <groupId>junit</groupId>

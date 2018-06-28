@@ -54,7 +54,7 @@
             <artifactId>tools</artifactId>
             <version>${maven.compiler.source}</version>
             <scope>system</scope>
-            <systemPath>${java.home}/../lib/tools.jar</systemPath>
+            <systemPath>${env.JAVA_HOME}/lib/tools.jar</systemPath>
         </dependency>
 
         <!-- test dependencies -->
