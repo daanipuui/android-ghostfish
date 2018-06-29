@@ -41,8 +41,9 @@
 
     <scm>
         <connection>scm:git:https://github.com/daanipuui/android-ghostfish.git</connection>
-        <url>https://github.com/daanipuui/android-ghostfish.git</url>
         <developerConnection>scm:git:https://github.com/daanipuui/android-ghostfish.git</developerConnection>
+        <url>https://github.com/daanipuui/android-ghostfish.git</url>
+        <tag>HEAD</tag>
     </scm>
 
     <dependencyManagement>
