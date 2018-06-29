@@ -18,9 +18,12 @@ During this stage, it also adds code allowing dependency injection to every non-
 ### 3.1 Add GhostFish dependency to your gradle file:
 
 ```
-implementation "com.danielpuiu:ghostfish:1.1.0"
-annotationProcessor "com.danielpuiu:ghostfish-compiler:1.1.0"
+implementation "com.danielpuiu:ghostfish:1.2.0"
+annotationProcessor "com.danielpuiu:ghostfish-compiler:1.2.0"
 ```
+
+The annotation processor uses the *tools.jar* from JDK lib directory.
+In order to compile your project, you need to set JAVA_HOME to point to a JDK that still exposes this jar (JDK 9 or JDK 10 not supported). 
 
 ### 3.2 Add GhostFish bind call to your application
 
