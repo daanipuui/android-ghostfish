@@ -11,7 +11,7 @@ Dependency injection container for Android
 
 Using annotation processors, GhostFish compiles a list of application scoped beans in *asset/beans.txt* file.
 
-During this stage, it also adds code allowing dependency injection to every non-bean class containing at least 1 `@Inject` annotation.
+During this stage, it also generates code allowing dependency injection to every non-bean class containing at least 1 `@Inject` annotation.
 
 ## 3. Example
 
