@@ -1,1 +1,2 @@
-com.danielpuiu.ghostfish.annotations.processor.GhostFishProcessor
+com.danielpuiu.ghostfish.annotations.processor.ApplicationScopedProcessor
+com.danielpuiu.ghostfish.annotations.processor.InjectProcessor
