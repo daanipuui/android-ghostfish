@@ -9,6 +9,7 @@ import com.danielpuiu.ghostfish.annotations.PostConstruct;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -21,12 +22,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GhostFish {
 
     private static final String LOG_TAG = "android-ghostfish";
-    private static final String BEAN_FILE_NAME = "app/src/main/assets/beans.txt";
 
     private static final GhostFish INSTANCE = new GhostFish();
 
@@ -34,20 +35,23 @@ public class GhostFish {
 
     private final Map<Class<?>, Constructor<?>> unresolvedBeans = new ConcurrentHashMap<>();
 
+    private final String beanFileName;
+
     private GhostFish() {
-        // prevent instantiation
+        Properties properties = loadProperties();
+        beanFileName = properties.getProperty("ghostfish.beans.filename", "app/src/main/assets/beans.txt");
     }
 
-    public static void bind(Context context) {
+    public static void create(Context context) {
         INSTANCE.createBeans(context);
         INSTANCE.resolveBeans();
 
-        INSTANCE.injectBeans();
+        INSTANCE.inject();
         INSTANCE.postConstruct();
     }
 
-    public static void injectBeans(Object targetBean) {
-        for (Field field: targetBean.getClass().getDeclaredFields()) {
+    public static void bind(Object object) {
+        for (Field field: object.getClass().getDeclaredFields()) {
             int modifier = field.getModifiers();
             if (Modifier.isStatic(modifier) || Modifier.isFinal(modifier) || field.getAnnotation(Inject.class) == null) {
                 continue;
@@ -59,12 +63,12 @@ public class GhostFish {
                 continue;
             }
 
-            setField(targetBean, field, bean);
+            setField(object, field, bean);
         }
     }
 
     public static String getBeanFileName() {
-        return BEAN_FILE_NAME;
+        return INSTANCE.beanFileName;
     }
 
     private void createBeans(Context context) {
@@ -86,9 +90,8 @@ public class GhostFish {
 
     private List<String> getBeanClassNames(Context context) {
         List<String> classNames = new ArrayList<>();
-        
-        File file = new File(getBeanFileName());
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(context.getAssets().open(file.getName())))) {
+
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(context.getAssets().open(new File(beanFileName).getName())))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 line = line.trim();
@@ -100,7 +103,7 @@ public class GhostFish {
                 classNames.add(line);
             }
         } catch (IOException e) {
-            Log.d(LOG_TAG, String.format("Cannot read asset file [%s].", getBeanFileName()));
+            Log.d(LOG_TAG, String.format("Cannot read asset file [%s].", beanFileName));
         }
 
         return classNames;
@@ -176,9 +179,9 @@ public class GhostFish {
         }
     }
 
-    private void injectBeans() {
-        for (Object targetBean: beans.values()) {
-            injectBeans(targetBean);
+    private void inject() {
+        for (Object bean: beans.values()) {
+            bind(bean);
         }
     }
 
@@ -249,5 +252,15 @@ public class GhostFish {
                 }
             }
         }
+    }
+
+    private Properties loadProperties() {
+        Properties properties = new Properties();
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("ghostfish.properties")) {
+            properties.load(inputStream);
+        } catch (IOException e) {
+            Log.e(LOG_TAG, e.getMessage());
+        }
+        return properties;
     }
 }
