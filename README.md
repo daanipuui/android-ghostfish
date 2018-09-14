@@ -11,19 +11,14 @@ Dependency injection container for Android
 
 Using annotation processors, GhostFish compiles a list of application scoped beans in *asset/beans.txt* file.
 
-During this stage, it also generates code allowing dependency injection to every non-bean class containing at least 1 `@Inject` annotation.
-
 ## 3. Example
 
 ### 3.1 Add GhostFish dependency to your gradle file:
 
 ```
-implementation "com.danielpuiu:ghostfish:1.2.0"
-annotationProcessor "com.danielpuiu:ghostfish-compiler:1.2.0"
+implementation "com.danielpuiu:ghostfish:2.0.0"
+annotationProcessor "com.danielpuiu:ghostfish-compiler:2.0.0"
 ```
-
-The annotation processor uses the *tools.jar* from JDK lib directory.
-In order to compile your project, you need to set JAVA_HOME to point to a JDK that still exposes this jar (JDK 9 or JDK 10 not supported). 
 
 ### 3.2 Add GhostFish bind call to your application
 
@@ -34,7 +29,7 @@ Subclass Android application and add the following code to `onCreate` method:
 public void onCreate() {
     super.onCreate();
 
-    GhostFish.bind(this);
+    GhostFish.create(this);
 }
 ```
 
@@ -84,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ...
+        GhostFish.bind(this);
         ...
         TextView textView = findViewById(R.id.message);
         textView.setText(sampleService.helloWorld());
