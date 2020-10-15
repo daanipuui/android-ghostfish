@@ -39,7 +39,7 @@
 
     <properties>
         <autoservice.version>1.0-rc2</autoservice.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
     <dependencies>
